@@ -21,10 +21,25 @@ class Disco(Scraping):
             "records": []
         }
 
-    def _get_price(self, dict: dict, data: dict) -> int | None:
+    def _get_price(self, dict: dict, data: dict) -> str | None:
+        """
+        PARAMS
+        ------
+        * dict: a dictiory where the prices ranges are saved
+        * data: the raw JSON data where all the IDs parameters are
+
+        RETURN
+        ------
+        A String with the price (could be empty in case of troubles)
+        or None
+        """
+        # get the ID where the differents prices are listed
         id_price_range = dict.get("priceRange", {}).get("id", "")
-        price_range_selling = data.get(id_price_range, {}).get(
-            "sellingPrice", {}).get("id", "")
+
+        # get the ID where the selling price is saved
+        price_range_selling = data.get(id_price_range, {}).get("sellingPrice", {}).get("id", "")
+
+        # get the highest selling prices
         selling_price = data.get(price_range_selling, {}).get("highPrice")
 
         return str(selling_price)
