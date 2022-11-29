@@ -4,7 +4,11 @@ from flask import Flask
 
 from .config.configuration import Development
 
+from flask_httpauth import HTTPBasicAuth
+
 app = Flask(__name__)
+
+auth = HTTPBasicAuth()
 
 
 def configure_logging():
@@ -18,6 +22,9 @@ def create_app():
 
 	from .api import api_bp
 	app.register_blueprint(api_bp)
+
+	from .auth import auth_bp
+	app.register_blueprint(auth_bp)
 
 	configure_logging()
 

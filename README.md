@@ -51,6 +51,7 @@ Incluye:
 * [Requests](https://pypi.org/project/requests/)
 * [Python-Dotenv](https://pypi.org/project/python-dotenv/)
 * [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
+* [Flask-HTTPAuth](https://pypi.org/project/Flask-HTTPAuth/)
 
 ## Cómo Usar
 
@@ -59,13 +60,15 @@ Una vez instaladas todas las dependencias, ejecutar el archivo `run.py`
 ```
 $ python run.py
 ```
-Y la aplicación comenzará a ejectuar en entorno Local con el puerto 5000 (`localhost:5000`).
+Y la aplicación comenzará a ejectuar en entorno Local con el puerto 5000 (`localhost:8080`).
 
 ## Probar
 
 ### Localmente
-Para verificar el enpoint, abrir en su navegador de preferencia, mientras al aplicación está ejecutandose, la URL: `localhost:5000/disco`, [o haga click aquí](http://localhost:5000/disco) y esta debería retonar un JSON con los parámetros establecidos anteriormente.
+Para verificar el enpoint, abrir en su navegador de preferencia, mientras al aplicación está ejecutandose, la URL: `localhost:8080/disco`, [o haga click aquí](http://localhost:8080/disco) y esta debería retonar un JSON con los parámetros establecidos anteriormente.
 
+**usuario**: admin 
+**password**: holamundo
 
 ### En caso de errores:
 En caso de no poder ejecutar la aplicación con el comando Python, intenté utilizar `$ python3 ...` o `$ python2 ..` etc, es decir: definir la versión. Esto suele suceder cuando hay varias versiones de python instaladas.

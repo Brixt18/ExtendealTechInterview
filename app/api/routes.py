@@ -5,6 +5,12 @@ from flask import make_response, request
 from app.utils.scraping import Disco
 
 from . import api_bp as bp
+from app import auth
+
+@bp.before_request
+@auth.login_required
+def before_request():
+	pass
 
 
 @bp.route("/disco", methods=["GET"])
